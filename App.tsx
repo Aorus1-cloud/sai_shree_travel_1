@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import BookingBar from './components/BookingBar';
 import Services from './components/Services';
 import Fleet from './components/Fleet';
 import WhyChooseUs from './components/WhyChooseUs';
@@ -33,6 +34,7 @@ const HomePage: React.FC = () => {
   return (
     <>
       <Hero />
+      <BookingBar />
       <Services />
       <Fleet />
       <WhyChooseUs />
@@ -47,7 +49,7 @@ const App: React.FC = () => {
   return (
     <Router>
       <ScrollToTop />
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen bg-white">
         <Navbar />
         <main className="flex-grow pt-20">
           <Routes>
