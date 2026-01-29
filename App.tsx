@@ -22,15 +22,17 @@ const ScrollToTop = () => {
 
 const HomePage: React.FC = () => {
   return (
-    <>
+    <div className="bg-white">
       <Hero />
-      <Services />
-      <Fleet />
-      <WhyChooseUs />
-      <Destinations />
-      <Reviews />
-      <CTA />
-    </>
+      <div className="mt-10 md:mt-0">
+        <Services />
+        <Fleet />
+        <WhyChooseUs />
+        <Destinations />
+        <Reviews />
+        <CTA />
+      </div>
+    </div>
   );
 };
 
@@ -40,7 +42,7 @@ const App: React.FC = () => {
       <ScrollToTop />
       <div className="flex flex-col min-h-screen">
         <Navbar />
-        <main className="flex-grow pt-20">
+        <main className="flex-grow">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/tours" element={<OtherTours />} />

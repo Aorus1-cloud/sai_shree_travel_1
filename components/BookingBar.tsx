@@ -1,67 +1,75 @@
 
 import React from 'react';
 import { MapPin, Car, Calendar, Phone, Search } from 'lucide-react';
-import { VEHICLES } from '../constants';
 
 const BookingBar: React.FC = () => {
   return (
-    <div className="w-full max-w-6xl mx-auto">
-      <div className="bg-gray-900/90 backdrop-blur-xl p-2 rounded-3xl shadow-2xl border border-white/10">
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 items-center">
+    <div className="relative z-20 w-full max-w-7xl mx-auto px-4 -mb-20">
+      <div className="bg-white p-3 md:p-5 rounded-3xl md:rounded-full shadow-[0_25px_60px_-15px_rgba(0,0,0,0.15)] border border-gray-100">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 items-center divide-y lg:divide-y-0 lg:divide-x divide-gray-100">
           
-          {/* Select Vehicle */}
-          <div className="p-4 flex items-center space-x-3 border-b md:border-b-0 md:border-r border-white/10 group cursor-pointer transition-colors hover:bg-white/5">
-            <Car className="w-5 h-5 text-teal-400 shrink-0" />
-            <div className="text-left">
-              <p className="text-[10px] text-gray-400 uppercase font-bold tracking-wider">Select Vehicle</p>
-              <select className="bg-transparent text-white text-sm font-bold w-full focus:outline-none cursor-pointer appearance-none">
-                <option className="bg-gray-900">Swift Dzire</option>
-                <option className="bg-gray-900">Ertiga</option>
-                <option className="bg-gray-900">Innova Crysta</option>
-                <option className="bg-gray-900">Tempo Traveller</option>
-              </select>
+          {/* 1. Vehicle */}
+          <div className="px-6 py-3 lg:py-2">
+            <div className="flex items-center space-x-3 mb-1">
+              <Car className="w-4 h-4 text-teal-500" />
+              <span className="text-[10px] text-gray-400 uppercase font-bold tracking-widest">Vehicle</span>
             </div>
+            <select className="w-full bg-transparent font-bold text-gray-900 focus:outline-none text-sm">
+              <option>Swift Dzire</option>
+              <option>Ertiga (6+1)</option>
+              <option>Innova Crysta</option>
+              <option>Tempo Traveller</option>
+            </select>
           </div>
 
-          {/* From Location */}
-          <div className="p-4 flex items-center space-x-3 border-b md:border-b-0 md:border-r border-white/10 group cursor-pointer transition-colors hover:bg-white/5">
-            <MapPin className="w-5 h-5 text-teal-400 shrink-0" />
-            <div className="text-left">
-              <p className="text-[10px] text-gray-400 uppercase font-bold tracking-wider">From Where?</p>
-              <input type="text" placeholder="Pickup City" className="bg-transparent text-white text-sm font-bold w-full focus:outline-none placeholder-gray-600" defaultValue="Nashik" />
+          {/* 2. From */}
+          <div className="px-6 py-3 lg:py-2">
+            <div className="flex items-center space-x-3 mb-1">
+              <MapPin className="w-4 h-4 text-teal-500" />
+              <span className="text-[10px] text-gray-400 uppercase font-bold tracking-widest">From</span>
             </div>
+            <input type="text" placeholder="Pickup location" defaultValue="Nashik" className="w-full bg-transparent font-bold text-gray-900 focus:outline-none text-sm placeholder-gray-300" />
           </div>
 
-          {/* To Location */}
-          <div className="p-4 flex items-center space-x-3 border-b lg:border-b-0 lg:border-r border-white/10 group cursor-pointer transition-colors hover:bg-white/5">
-            <MapPin className="w-5 h-5 text-teal-400 shrink-0" />
-            <div className="text-left">
-              <p className="text-[10px] text-gray-400 uppercase font-bold tracking-wider">To Where?</p>
-              <input type="text" placeholder="Destination" className="bg-transparent text-white text-sm font-bold w-full focus:outline-none placeholder-gray-600" />
+          {/* 3. To */}
+          <div className="px-6 py-3 lg:py-2">
+            <div className="flex items-center space-x-3 mb-1">
+              <MapPin className="w-4 h-4 text-teal-500" />
+              <span className="text-[10px] text-gray-400 uppercase font-bold tracking-widest">To</span>
             </div>
+            <input type="text" placeholder="Destination" className="w-full bg-transparent font-bold text-gray-900 focus:outline-none text-sm placeholder-gray-300" />
           </div>
 
-          {/* Date */}
-          <div className="p-4 flex items-center space-x-3 border-b md:border-b-0 md:border-r border-white/10 group cursor-pointer transition-colors hover:bg-white/5">
-            <Calendar className="w-5 h-5 text-teal-400 shrink-0" />
-            <div className="text-left">
-              <p className="text-[10px] text-gray-400 uppercase font-bold tracking-wider">Date</p>
-              <input type="date" className="bg-transparent text-white text-sm font-bold w-full focus:outline-none" />
+          {/* 4. Pickup Date */}
+          <div className="px-6 py-3 lg:py-2">
+            <div className="flex items-center space-x-3 mb-1">
+              <Calendar className="w-4 h-4 text-teal-500" />
+              <span className="text-[10px] text-gray-400 uppercase font-bold tracking-widest">Pickup Date</span>
             </div>
+            <input type="date" className="w-full bg-transparent font-bold text-gray-900 focus:outline-none text-sm" />
           </div>
 
-          {/* Phone */}
-          <div className="p-4 flex items-center space-x-3 group cursor-pointer transition-colors hover:bg-white/5">
-            <Phone className="w-5 h-5 text-teal-400 shrink-0" />
-            <div className="text-left">
-              <p className="text-[10px] text-gray-400 uppercase font-bold tracking-wider">Phone</p>
-              <input type="tel" placeholder="Enter number" className="bg-transparent text-white text-sm font-bold w-full focus:outline-none placeholder-gray-600" />
+          {/* 5. Phone */}
+          <div className="px-6 py-3 lg:py-2">
+            <div className="flex items-center space-x-3 mb-1">
+              <Phone className="w-4 h-4 text-teal-500" />
+              <span className="text-[10px] text-gray-400 uppercase font-bold tracking-widest">Phone</span>
             </div>
+            <input type="tel" placeholder="+91" className="w-full bg-transparent font-bold text-gray-900 focus:outline-none text-sm placeholder-gray-300" />
           </div>
 
-          {/* Action Button */}
+          {/* 6. Travel Date */}
+          <div className="px-6 py-3 lg:py-2">
+            <div className="flex items-center space-x-3 mb-1">
+              <Calendar className="w-4 h-4 text-teal-500" />
+              <span className="text-[10px] text-gray-400 uppercase font-bold tracking-widest">Travel Date</span>
+            </div>
+            <input type="date" className="w-full bg-transparent font-bold text-gray-900 focus:outline-none text-sm" />
+          </div>
+
+          {/* 7. Action */}
           <div className="p-2">
-            <button className="w-full bg-teal-500 hover:bg-teal-400 text-white flex items-center justify-center space-x-2 py-4 rounded-2xl transition-all shadow-lg hover:shadow-teal-500/40">
+            <button className="w-full bg-teal-500 hover:bg-teal-600 text-white flex items-center justify-center space-x-2 py-4 lg:py-6 rounded-full transition-all shadow-xl shadow-teal-500/20 active:scale-95">
               <Search className="w-5 h-5" />
               <span className="font-bold">Book Now</span>
             </button>
