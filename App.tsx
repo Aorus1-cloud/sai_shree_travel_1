@@ -3,7 +3,6 @@ import React, { useEffect } from 'react';
 import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import BookingBar from './components/BookingBar';
 import Services from './components/Services';
 import Fleet from './components/Fleet';
 import WhyChooseUs from './components/WhyChooseUs';
@@ -14,19 +13,10 @@ import Footer from './components/Footer';
 import OtherTours from './pages/OtherTours';
 
 const ScrollToTop = () => {
-  const { pathname, hash } = useLocation();
-  
+  const { pathname } = useLocation();
   useEffect(() => {
-    if (hash) {
-      const element = document.getElementById(hash.replace('#', ''));
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    } else {
-      window.scrollTo(0, 0);
-    }
-  }, [pathname, hash]);
-  
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return null;
 };
 
@@ -34,7 +24,6 @@ const HomePage: React.FC = () => {
   return (
     <>
       <Hero />
-      <BookingBar />
       <Services />
       <Fleet />
       <WhyChooseUs />
@@ -49,7 +38,7 @@ const App: React.FC = () => {
   return (
     <Router>
       <ScrollToTop />
-      <div className="flex flex-col min-h-screen bg-white">
+      <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow pt-20">
           <Routes>
