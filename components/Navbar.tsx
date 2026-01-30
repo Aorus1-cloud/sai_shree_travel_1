@@ -1,75 +1,111 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Compass, Menu, X } from 'lucide-react';
+import { Phone, Mail, Instagram, Facebook, Twitter, Linkedin, Menu, X, Compass } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenu, setMobileMenu] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'Services', path: '/#services' },
-    { name: 'Fleet', path: '/#fleet' },
-    { name: 'About', path: '/#about' }
+    { name: 'ABOUT', path: '/#about' },
+    { name: 'CAR LIST', path: '/#fleet' },
+    { name: 'OUR SERVICE', path: '/#services' },
+    { name: 'SUPPORT', path: '/#footer' }
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Left: Logo & Name */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className={`p-2 rounded-xl transition-colors ${scrolled ? 'bg-teal-500 text-white' : 'bg-white/20 text-white backdrop-blur-md border border-white/20'}`}>
-              <Compass className="w-6 h-6" />
-            </div>
-            <div className="flex flex-col">
-              <span className={`text-xl font-bold tracking-tight ${scrolled ? 'text-gray-900' : 'text-white'}`}>Saishree</span>
-              <span className={`text-[9px] uppercase tracking-[0.3em] font-bold leading-none ${scrolled ? 'text-teal-600' : 'text-teal-400'}`}>Travels</span>
-            </div>
-          </Link>
-
-          {/* Desktop Links */}
-          <div className="hidden md:flex items-center space-x-10">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.path}
-                className={`text-sm font-bold uppercase tracking-wider transition-colors hover:text-teal-500 ${scrolled ? 'text-gray-700' : 'text-white'}`}
-              >
-                {link.name}
-              </a>
-            ))}
-            <button className="bg-teal-500 hover:bg-teal-600 text-white px-7 py-3 rounded-full text-sm font-bold transition-all shadow-lg hover:shadow-teal-500/30">
-              Book Now
-            </button>
+    <header className="fixed top-0 left-0 right-0 z-50">
+      {/* Top Utility Bar */}
+      <div className={`hidden md:flex bg-white border-b border-gray-100 py-2 transition-all duration-300 ${scrolled ? 'h-0 py-0 overflow-hidden opacity-0' : 'h-10 opacity-100'}`}>
+        <div className="max-w-7xl mx-auto px-4 w-full flex justify-between items-center text-[11px] font-bold text-gray-500 uppercase tracking-wider">
+          <div className="flex items-center space-x-6">
+            <a href="tel:+917385957171" className="flex items-center space-x-2 hover:text-primary transition-colors">
+              <Phone className="w-3 h-3 text-primary" />
+              <span>+91 73859 57171</span>
+            </a>
+            <a href="mailto:shubhampagar111@gmail.com" className="flex items-center space-x-2 hover:text-primary transition-colors">
+              <Mail className="w-3 h-3 text-primary" />
+              <span>support@saishree.com</span>
+            </a>
           </div>
-
-          {/* Mobile Menu Toggle */}
-          <button onClick={() => setMobileMenu(!mobileMenu)} className={`md:hidden p-2 ${scrolled ? 'text-gray-900' : 'text-white'}`}>
-            {mobileMenu ? <X /> : <Menu />}
-          </button>
+          <div className="flex items-center space-x-4">
+            <Facebook className="w-3.5 h-3.5 cursor-pointer hover:text-primary transition-colors" />
+            <Twitter className="w-3.5 h-3.5 cursor-pointer hover:text-primary transition-colors" />
+            <Instagram className="w-3.5 h-3.5 cursor-pointer hover:text-primary transition-colors" />
+            <Linkedin className="w-3.5 h-3.5 cursor-pointer hover:text-primary transition-colors" />
+          </div>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {mobileMenu && (
-        <div className="md:hidden bg-white border-t border-gray-100 absolute top-full left-0 right-0 p-6 space-y-4 shadow-2xl">
-          {navLinks.map((link) => (
-            <a key={link.name} href={link.path} onClick={() => setMobileMenu(false)} className="block text-lg font-bold text-gray-900">
-              {link.name}
-            </a>
-          ))}
-          <button className="w-full bg-teal-500 text-white py-4 rounded-xl font-bold">Book Now</button>
+      {/* Main Navbar */}
+      <nav className={`transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-lg py-4' : 'bg-white py-6'}`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center">
+            {/* Logo */}
+            <Link to="/" className="flex items-center group">
+              <div className="relative">
+                <div className="absolute -inset-1 bg-primary rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                <div className="relative px-2 py-2 bg-white rounded-lg flex items-center">
+                  <span className="text-2xl font-black text-gray-900 tracking-tighter">
+                    <span className="text-primary">S</span>ai<span className="text-primary">b</span>uz.com
+                  </span>
+                </div>
+              </div>
+            </Link>
+
+            {/* Desktop Links */}
+            <div className="hidden lg:flex items-center space-x-12">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.path}
+                  className="text-[13px] font-extrabold text-gray-800 hover:text-primary transition-colors tracking-widest"
+                >
+                  {link.name}
+                </a>
+              ))}
+            </div>
+
+            {/* Actions */}
+            <div className="hidden lg:flex items-center space-x-6">
+              <button className="text-[13px] font-bold text-primary hover:text-primary/80">Sign up</button>
+              <button className="bg-primary hover:bg-primary/90 text-white px-8 py-3.5 rounded-xl text-[13px] font-extrabold shadow-xl shadow-primary/20 transition-all hover:-translate-y-0.5 active:translate-y-0">
+                Rent A Car
+              </button>
+            </div>
+
+            {/* Mobile Toggle */}
+            <button onClick={() => setMobileMenu(!mobileMenu)} className="lg:hidden p-2 text-gray-900">
+              {mobileMenu ? <X size={28} /> : <Menu size={28} />}
+            </button>
+          </div>
         </div>
-      )}
-    </nav>
+
+        {/* Mobile Menu */}
+        {mobileMenu && (
+          <div className="lg:hidden bg-white border-t border-gray-50 absolute top-full left-0 right-0 p-8 space-y-6 shadow-2xl animate-in slide-in-from-top duration-300">
+            {navLinks.map((link) => (
+              <a key={link.name} href={link.path} onClick={() => setMobileMenu(false)} className="block text-xl font-black text-gray-900 hover:text-primary">
+                {link.name}
+              </a>
+            ))}
+            <div className="pt-6 space-y-4">
+              <button className="w-full text-center font-bold text-gray-500">Sign up</button>
+              <button className="w-full bg-primary text-white py-5 rounded-2xl font-black shadow-xl shadow-primary/30">
+                Rent A Car
+              </button>
+            </div>
+          </div>
+        )}
+      </nav>
+    </header>
   );
 };
 

@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import BookingBar from './components/BookingBar';
 import Services from './components/Services';
 import Fleet from './components/Fleet';
 import WhyChooseUs from './components/WhyChooseUs';
@@ -24,7 +25,15 @@ const HomePage: React.FC = () => {
   return (
     <div className="bg-white">
       <Hero />
-      <div className="mt-10 md:mt-0">
+      {/* 
+        Positioning BookingBar relatively with a negative margin 
+        ensures it overlaps the Hero while remaining in the document flow 
+        to prevent vertical clipping.
+      */}
+      <div className="relative z-20 -mt-24 lg:-mt-32">
+        <BookingBar />
+      </div>
+      <div className="mt-20 lg:mt-32">
         <Services />
         <Fleet />
         <WhyChooseUs />

@@ -7,7 +7,7 @@ export const VEHICLES: Vehicle[] = [
   {
     id: '1',
     name: 'Swift Dzire',
-    image: 'https://images.unsplash.com/photo-1592198084033-aade902d1aae?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=800',
     seats: '4+1',
     luggage: '2 Bags',
     fuel: 'Petrol/CNG',
@@ -17,8 +17,8 @@ export const VEHICLES: Vehicle[] = [
   },
   {
     id: '2',
-    name: 'Ertiga',
-    image: 'https://images.unsplash.com/photo-1623940424346-601f01697f26?q=80&w=800&auto=format&fit=crop',
+    name: 'Maruti Ertiga',
+    image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=800',
     seats: '6+1',
     luggage: '3 Bags',
     fuel: 'Petrol/CNG',
@@ -29,7 +29,7 @@ export const VEHICLES: Vehicle[] = [
   {
     id: '3',
     name: 'Hyundai Aura',
-    image: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&q=80&w=800',
     seats: '4+1',
     luggage: '2 Bags',
     fuel: 'Petrol',
@@ -40,7 +40,7 @@ export const VEHICLES: Vehicle[] = [
   {
     id: '4',
     name: 'Innova Crysta',
-    image: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=800',
     seats: '7+1',
     luggage: '4 Bags',
     fuel: 'Diesel',
@@ -51,7 +51,7 @@ export const VEHICLES: Vehicle[] = [
   {
     id: '5',
     name: 'Tempo Traveller',
-    image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?auto=format&fit=crop&q=80&w=800',
     seats: '12-17',
     luggage: '10 Bags',
     fuel: 'Diesel',
@@ -70,17 +70,17 @@ export const SERVICES: Service[] = [
 ];
 
 export const DESTINATIONS: Destination[] = [
-  { id: '1', name: 'Trimbakeshwar', image: 'https://images.unsplash.com/photo-1626294246830-47963d2319f3?q=80&w=800&auto=format&fit=crop', description: 'One of the 12 Jyotirlingas, a sacred pilgrimage site.' },
-  { id: '2', name: 'Shirdi', image: 'https://images.unsplash.com/photo-1620067925053-380d603a110a?q=80&w=800&auto=format&fit=crop', description: 'The home of Sai Baba, drawing millions of devotees yearly.' },
-  { id: '3', name: 'Mumbai', image: 'https://images.unsplash.com/photo-1570160897040-30430ade2211?q=80&w=800&auto=format&fit=crop', description: 'The bustling financial capital of India.' },
-  { id: '4', name: 'Pune', image: 'https://images.unsplash.com/photo-1582650809055-7f938f325990?q=80&w=800&auto=format&fit=crop', description: 'The cultural hub and IT capital of Maharashtra.' },
-  { id: '5', name: 'Panchgani', image: 'https://images.unsplash.com/photo-1594913785162-e6785633842c?q=80&w=800&auto=format&fit=crop', description: 'Beautiful hill station known for its scenic views.' }
+  { id: '1', name: 'Trimbakeshwar', image: 'https://images.unsplash.com/photo-1621501659305-655b3f274640?auto=format&fit=crop&q=80&w=800', description: 'One of the 12 Jyotirlingas, a sacred pilgrimage site near Nashik.' },
+  { id: '2', name: 'Shirdi', image: 'https://images.unsplash.com/photo-1544011501-a22271d42398?auto=format&fit=crop&q=80&w=800', description: 'The home of Sai Baba, drawing millions of devotees yearly.' },
+  { id: '3', name: 'Mumbai', image: 'https://images.unsplash.com/photo-1567157577867-05ccb1388e66?auto=format&fit=crop&q=80&w=800', description: 'The bustling financial capital of India and its Gateway.' },
+  { id: '4', name: 'Pune', image: 'https://images.unsplash.com/photo-1574482620826-40685ca5826c?auto=format&fit=crop&q=80&w=800', description: 'The cultural hub and historic seat of the Peshwas.' },
+  { id: '5', name: 'Panchgani', image: 'https://images.unsplash.com/photo-1625505826533-5c80aca7d157?auto=format&fit=crop&q=80&w=800', description: 'Beautiful hill station known for its scenic views and berries.' }
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
-  { id: '1', name: 'Rahul Sharma', role: 'Business Traveler', content: 'Extremely punctual and professional. The car was clean and the driver was very polite. Best service in Nashik.', rating: 5, avatar: 'https://picsum.photos/seed/rahul/100/100' },
-  { id: '2', name: 'Priya Deshmukh', role: 'Family Trip', content: 'We booked an Innova for a trip to Shirdi. It was a very comfortable journey. Highly recommended for family tours.', rating: 5, avatar: 'https://picsum.photos/seed/priya/100/100' },
-  { id: '3', name: 'Amit Patil', role: 'Regular Customer', content: 'I have been using Saishree Tours for 2 years now. Consistency in quality is what makes them different.', rating: 5, avatar: 'https://picsum.photos/seed/amit/100/100' }
+  { id: '1', name: 'Rahul Sharma', role: 'Business Traveler', content: 'Extremely punctual and professional. The car was clean and the driver was very polite. Best service in Nashik.', rating: 5, avatar: 'https://i.pravatar.cc/150?u=rahul' },
+  { id: '2', name: 'Priya Deshmukh', role: 'Family Trip', content: 'We booked an Innova for a trip to Shirdi. It was a very comfortable journey. Highly recommended for family tours.', rating: 5, avatar: 'https://i.pravatar.cc/150?u=priya' },
+  { id: '3', name: 'Amit Patil', role: 'Regular Customer', content: 'I have been using Saishree Tours for 2 years now. Consistency in quality is what makes them different.', rating: 5, avatar: 'https://i.pravatar.cc/150?u=amit' }
 ];
 
 export const WHY_CHOOSE_US = [
